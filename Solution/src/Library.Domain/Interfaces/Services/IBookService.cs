@@ -10,5 +10,5 @@ public interface IBookService
     Task<List<Book>> GetBooksByAuthorAsync(string author);
     Task<Book> GetBookByIsbnAsync(string isbn);
     Task<Book> UpdateBookAsync(Guid id, Book book);
-    Task DeleteBookAsync(Guid id); // depois, lembrar que aqui só diminui um da quantity, se a quantity < 1 deleta.
+    Task DeleteBookAsync(Guid id); 
 }

@@ -18,6 +18,5 @@ internal class BookConfiguration : IEntityTypeConfiguration<Book>
         builder.Property(x => x.Genre).HasColumnName("Genre").HasMaxLength(20).IsRequired();
         builder.Property(x => x.PublicationYear).HasColumnName("Publication Year").HasMaxLength(4).IsFixedLength().IsRequired();
         builder.Property(x => x.IsBorrowed).HasColumnName("Borrowed").IsRequired();
-        builder.Property(x => x.Quantity).HasColumnName("Quantity").IsRequired();
     }
 }

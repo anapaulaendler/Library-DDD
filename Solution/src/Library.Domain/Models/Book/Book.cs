@@ -11,5 +11,4 @@ public class Book : IEntity
     public required string Genre { get; set; }
     public required string PublicationYear { get; set; }
     public bool IsBorrowed { get; set; }
-    public int Quantity { get; set; } = 1;
 }

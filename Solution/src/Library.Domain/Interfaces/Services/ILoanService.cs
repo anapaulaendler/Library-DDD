@@ -9,4 +9,5 @@ public interface ILoanService
     Task<List<Loan>> GetLoansByUser(Guid id);
     Task<List<Loan>> GetLoansByBook(Guid id);
     Task<decimal> GetUserTotalFine(Guid id);
+    Task<Loan> UpdateLoan(Guid bookId);
 }
