@@ -1,0 +1,12 @@
+using Library.Domain.Models;
+
+namespace Library.Domain.Interfaces;
+
+public interface ILoanService
+{
+    Task<Loan> NewLoanAsync(Loan loan);
+    Task<List<Loan>> GetLoansAsync();
+    Task<List<Loan>> GetLoansByUser(Guid id);
+    Task<List<Loan>> GetLoansByBook(Guid id);
+    Task<decimal> GetUserTotalFine(Guid id);
+}
