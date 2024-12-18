@@ -56,16 +56,16 @@ public class BookService : IBookService
         return book;
     }
 
-    public List<Book> GetBookByTitleAsync(string title)
+    public async Task<List<Book>> GetBookByTitleAsync(string title)
     {
-        var books = _bookRepository.GetBookByTitleAsync(title);
+        var books = await _bookRepository.GetBookByTitleAsync(title);
 
         return books;
     }
 
-    public List<Book> GetBooksByAuthorAsync(string author)
+    public async Task<List<Book>> GetBooksByAuthorAsync(string author)
     {
-        var books = _bookRepository.GetBooksByAuthorAsync(author);
+        var books = await _bookRepository.GetBooksByAuthorAsync(author);
 
         return books;
     }

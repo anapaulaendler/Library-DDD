@@ -1148,19 +1148,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Dev-Headsoft\\.nuget\\packages\\": {}
+    "C:\\Users\\Usuário\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dev-Headsoft\\Documents\\Library-DDD\\Solution\\src\\Library.Application\\Library.Application.csproj",
+      "projectUniqueName": "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Application\\Library.Application.csproj",
       "projectName": "Library.Application",
-      "projectPath": "C:\\Users\\Dev-Headsoft\\Documents\\Library-DDD\\Solution\\src\\Library.Application\\Library.Application.csproj",
-      "packagesPath": "C:\\Users\\Dev-Headsoft\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dev-Headsoft\\Documents\\Library-DDD\\Solution\\src\\Library.Application\\obj\\",
+      "projectPath": "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Application\\Library.Application.csproj",
+      "packagesPath": "C:\\Users\\Usuário\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Dev-Headsoft\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Usuário\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -1172,11 +1172,11 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\Dev-Headsoft\\Documents\\Library-DDD\\Solution\\src\\Library.Domain\\Library.Domain.csproj": {
-              "projectPath": "C:\\Users\\Dev-Headsoft\\Documents\\Library-DDD\\Solution\\src\\Library.Domain\\Library.Domain.csproj"
+            "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Domain\\Library.Domain.csproj": {
+              "projectPath": "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Domain\\Library.Domain.csproj"
             },
-            "C:\\Users\\Dev-Headsoft\\Documents\\Library-DDD\\Solution\\src\\Library.Infra\\Library.Infra.csproj": {
-              "projectPath": "C:\\Users\\Dev-Headsoft\\Documents\\Library-DDD\\Solution\\src\\Library.Infra\\Library.Infra.csproj"
+            "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Infra\\Library.Infra.csproj": {
+              "projectPath": "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Infra\\Library.Infra.csproj"
             }
           }
         }

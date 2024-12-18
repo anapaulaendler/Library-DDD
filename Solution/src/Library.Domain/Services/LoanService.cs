@@ -25,31 +25,105 @@ public class LoanService : ILoanService
         return loans;
     }
 
-    public Task<List<Loan>> GetLoansByBook(Guid id)
+    public async Task<List<Loan>> GetLoansByBook(Guid id)
     {
-        throw new NotImplementedException();
-        // var bookLoans = _loanRepository.GetLoansByBook(id);
+        await ValidateBookAsync(id);
 
-        // return bookLoans;
+        var bookLoans = await _loanRepository.GetLoansByBookAsync(id);
+
+        return bookLoans;
     }
 
-    public Task<List<Loan>> GetLoansByUser(Guid id)
+    public async Task<List<Loan>> GetLoansByUser(Guid id)
     {
-        throw new NotImplementedException();
+        await ValidateUserAsync(id);
+
+        var userLoans = await _loanRepository.GetLoansByUserAsync(id);
+
+        return userLoans;
     }
 
-    public Task<decimal> GetUserTotalFine(Guid id)
+    public async Task<decimal> GetUserTotalFine(Guid id)
     {
-        throw new NotImplementedException();
+        await ValidateUserAsync(id);
+
+        decimal totalFine = await _loanRepository.GetUserTotalFineAsync(id);
+
+        return totalFine;
     }
 
-    public Task<Loan> NewLoanAsync(LoanDTO loan)
+    public async Task<Loan> NewLoanAsync(LoanDTO loanDto)
     {
-        throw new NotImplementedException();
+        await _uow.BeginTransactionAsync();
+
+        var loanUser = await ValidateUserAsync(loanDto.userId);
+        var loanBook = await ValidateBookAsync(loanDto.bookId);
+
+        await UpdateBookStatusAsync(loanBook.Id, true);
+
+        const int loanDurationDays = 14;
+
+        var newLoan = new Loan
+        {
+            Id = Guid.NewGuid(),
+            BookId = loanDto.BookId,
+            UserId = loanDto.UserId,
+            LoanDate = loanDto.LoanDate,
+            ReturnDate = loanDto.LoanDate.AddDays(loanDurationDays),
+
+            User = loanUser,
+            Book = loanBook
+        };
+
+        await _loanRepository.AddAsync(newLoan);
+        await _uow.CommitTransactionAsync();
+
+        return newLoan;
     }
 
-    public Task<Loan> UpdateLoan(Guid bookId)
+    public async Task<Loan> UpdateLoan(Guid bookId)
     {
-        throw new NotImplementedException();
+        var book = await ValidateBookAsync(bookId);
+        await UpdateBookStatusAsync(book.Id, false);
+
+        var loan = await _loanRepository.FindSpecificLoanByBookIdAsync(bookId);
+
+        DateTime returnDate = DateTime.UtcNow;
+        const decimal dailyFineRate = 3;
+
+        loan.MarkAsReturned(returnDate, dailyFineRate);
+
+        await _loanRepository.Update(loan);
+        await _uow.CommitTransactionAsync();
+
+        return loan;
+    }
+
+    private async Task<User> ValidateUserAsync(Guid userId)
+    {
+        var user = await _userRepository.GetByIdAsync(userId);
+        if (user == null)
+        {
+            throw new ArgumentException($"User with ID {userId} does not exist.");
+        }
+        return user;
+    }
+
+    private async Task<Book> ValidateBookAsync(Guid bookId)
+    {
+        var book = await _bookRepository.GetByIdAsync(bookId);
+        if (book == null)
+        {
+            throw new ArgumentException($"Book with ID {bookId} does not exist.");
+        }
+        return book;
+    }
+
+    public async Task UpdateBookStatusAsync(Guid bookId, bool isBorrowed)
+    {
+        var book = await ValidateBookAsync(bookId);
+
+        book.IsBorrowed = isBorrowed;
+        await _bookRepository.Update(book);
     }
 }

@@ -1,6 +1,7 @@
 using Library.Domain.Interfaces;
 using Library.Domain.Models;
 using Library.Infra.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace Library.Infra.Repositories;
 
@@ -10,32 +11,41 @@ public class LoanRepository : RepositoryBase<Loan>, ILoanRepository
     {
     }
 
-    public List<Loan> GetLoansByBook(Guid id)
+    public async Task<Loan> FindSpecificLoanByBookIdAsync(Guid bookId)
+    {
+        var loan = await _dbSet
+        .Where(l => l.BookId == bookId && l.ReturnDate == null)
+        .OrderBy(l => Math.Abs((l.LoanDate - DateTime.Now).Ticks))
+        .FirstOrDefaultAsync();
+
+        if (loan is null)
+        {
+            throw new ArgumentException($"No active loan found for the book with ID {bookId}.");
+        }
+
+        return loan;
+    }
+
+    public async Task<List<Loan>> GetLoansByBookAsync(Guid id)
     {
         List<Loan> bookLoans = [];
-        bookLoans = _dbSet.Where(x => x.BookId == id).ToList();
+        bookLoans = await _dbSet.Where(x => x.BookId == id).ToListAsync();
 
         return bookLoans;
     }
 
-    public List<Loan> GetLoansByUser(Guid id)
+    public async Task<List<Loan>> GetLoansByUserAsync(Guid id)
     {
         List<Loan> userLoans = [];
-        userLoans = _dbSet.Where(x => x.UserId == id).ToList();
+        userLoans = await _dbSet.Where(x => x.UserId == id).ToListAsync();
 
         return userLoans;
     }
 
-    public decimal GetUserTotalFine(Guid id)
+    public async Task<decimal> GetUserTotalFineAsync(Guid id)
     {
-        List<Loan> userLoans = GetLoansByUser(id);
-        decimal totalFine = 0;
+        List<Loan> userLoans = await GetLoansByUserAsync(id);
 
-        foreach (Loan loan in userLoans)
-        {
-            totalFine += loan.Fine;
-        }
-
-        return totalFine;
+        return userLoans.Sum(l => l.Fine);
     }
 }

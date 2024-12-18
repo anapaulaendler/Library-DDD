@@ -4,7 +4,8 @@ namespace Library.Domain.Interfaces;
 
 public interface ILoanRepository : IRepositoryBase<Loan>
 {
-    List<Loan> GetLoansByUser(Guid id);
-    List<Loan> GetLoansByBook(Guid id);
-    decimal GetUserTotalFine(Guid id);
+    Task<List<Loan>> GetLoansByUserAsync(Guid id);
+    Task<List<Loan>> GetLoansByBookAsync(Guid id);
+    Task<decimal> GetUserTotalFineAsync(Guid id);
+    Task<Loan> FindSpecificLoanByBookIdAsync(Guid bookId);
 }

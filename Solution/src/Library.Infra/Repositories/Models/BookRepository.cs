@@ -23,19 +23,15 @@ public class BookRepository : RepositoryBase<Book>, IBookRepository
         return book;
     }
 
-    public List<Book> GetBookByTitleAsync(string title)
+    public async Task<List<Book>> GetBookByTitleAsync(string title)
     {
-        List<Book> books = [];
-        books = _dbSet.Where(x => x.Title == title).ToList();
-
+        var books = await _dbSet.Where(x => x.Title == title).ToListAsync();
         return books;
     }
 
-    public List<Book> GetBooksByAuthorAsync(string author)
+    public async Task<List<Book>> GetBooksByAuthorAsync(string author)
     {
-        List<Book> books = [];
-        books = _dbSet.Where(x => x.Author == author).ToList();
-
+        var books = await _dbSet.Where(x => x.Author == author).ToListAsync();
         return books;
     }
 }
