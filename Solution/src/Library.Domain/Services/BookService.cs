@@ -46,6 +46,11 @@ public class BookService : IBookService
     {
         var book = await _bookRepository.GetByIdAsync(id);
 
+        if (book is null)
+        {
+            throw new ArgumentException($"Book with ID {id} does not exist.");
+        }
+
         return book;
     }
 
@@ -53,12 +58,22 @@ public class BookService : IBookService
     {
         var book = await _bookRepository.GetBookByIsbnAsync(isbn);
 
+        if (book is null)
+        {
+            throw new ArgumentException($"Book with ISBN {isbn} does not exist.");
+        }
+
         return book;
     }
 
-    public async Task<List<Book>> GetBookByTitleAsync(string title)
+    public async Task<List<Book>> GetBooksByTitleAsync(string title)
     {
-        var books = await _bookRepository.GetBookByTitleAsync(title);
+        var books = await _bookRepository.GetBooksByTitleAsync(title);
+
+        if (books is null)
+        {
+            throw new ArgumentException($"Books with Title {title} do not exist.");
+        }
 
         return books;
     }
@@ -66,6 +81,11 @@ public class BookService : IBookService
     public async Task<List<Book>> GetBooksByAuthorAsync(string author)
     {
         var books = await _bookRepository.GetBooksByAuthorAsync(author);
+
+        if (books is null)
+        {
+            throw new ArgumentException($"Books with Author {author} do not exist.");
+        }
 
         return books;
     }
@@ -84,5 +104,12 @@ public class BookService : IBookService
         await _uow.CommitTransactionAsync();
 
         return book;
+    }
+
+    public async Task<List<Book>> GetBooksAsync()
+    {
+        var books = await _bookRepository.GetAsync();
+
+        return books;
     }
 }

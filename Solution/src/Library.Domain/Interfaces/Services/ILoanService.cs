@@ -6,8 +6,8 @@ public interface ILoanService
 {
     Task<Loan> NewLoanAsync(LoanDTO loan);
     Task<List<Loan>> GetLoansAsync();
-    Task<List<Loan>> GetLoansByUser(Guid id);
-    Task<List<Loan>> GetLoansByBook(Guid id);
-    Task<decimal> GetUserTotalFine(Guid id);
-    Task<Loan> UpdateLoan(Guid bookId);
+    Task<List<Loan>> GetLoansByUserAsync(Guid id);
+    Task<List<Loan>> GetLoansByBookAsync(Guid id);
+    Task<string> GetUserTotalFineAsync(Guid id);
+    Task<Loan> UpdateLoanAsync(Guid bookId);
 }

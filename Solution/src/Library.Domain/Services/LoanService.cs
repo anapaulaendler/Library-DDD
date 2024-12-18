@@ -25,39 +25,39 @@ public class LoanService : ILoanService
         return loans;
     }
 
-    public async Task<List<Loan>> GetLoansByBook(Guid id)
+    public async Task<List<Loan>> GetLoansByBookAsync(Guid bookId)
     {
-        await ValidateBookAsync(id);
+        await ValidateBookAsync(bookId);
 
-        var bookLoans = await _loanRepository.GetLoansByBookAsync(id);
+        var bookLoans = await _loanRepository.GetLoansByBookAsync(bookId);
 
         return bookLoans;
     }
 
-    public async Task<List<Loan>> GetLoansByUser(Guid id)
+    public async Task<List<Loan>> GetLoansByUserAsync(Guid userId)
     {
-        await ValidateUserAsync(id);
+        await ValidateUserAsync(userId);
 
-        var userLoans = await _loanRepository.GetLoansByUserAsync(id);
+        var userLoans = await _loanRepository.GetLoansByUserAsync(userId);
 
         return userLoans;
     }
 
-    public async Task<decimal> GetUserTotalFine(Guid id)
+    public async Task<string> GetUserTotalFineAsync(Guid userId)
     {
-        await ValidateUserAsync(id);
+        User user = await ValidateUserAsync(userId);
 
-        decimal totalFine = await _loanRepository.GetUserTotalFineAsync(id);
+        decimal totalFine = await _loanRepository.GetUserTotalFineAsync(userId);
 
-        return totalFine;
+        return $"{user.Name}: $ {totalFine}";
     }
 
     public async Task<Loan> NewLoanAsync(LoanDTO loanDto)
     {
         await _uow.BeginTransactionAsync();
 
-        var loanUser = await ValidateUserAsync(loanDto.userId);
-        var loanBook = await ValidateBookAsync(loanDto.bookId);
+        var loanUser = await ValidateUserAsync(loanDto.UserId);
+        var loanBook = await ValidateBookAsync(loanDto.BookId);
 
         await UpdateBookStatusAsync(loanBook.Id, true);
 
@@ -81,7 +81,7 @@ public class LoanService : ILoanService
         return newLoan;
     }
 
-    public async Task<Loan> UpdateLoan(Guid bookId)
+    public async Task<Loan> UpdateLoanAsync(Guid bookId)
     {
         var book = await ValidateBookAsync(bookId);
         await UpdateBookStatusAsync(book.Id, false);

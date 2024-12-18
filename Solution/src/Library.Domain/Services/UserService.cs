@@ -3,12 +3,12 @@ using Library.Domain.Models;
 
 namespace Library.Domain.Services;
 
-public class UserServices : IUserService
+public class UserService : IUserService
 {
     private readonly IUserRepository _userRepository;
     private readonly IUnitOfWork _uow;
 
-    public UserServices(IUserRepository userRepository, IUnitOfWork uow)
+    public UserService(IUserRepository userRepository, IUnitOfWork uow)
     {
         _userRepository = userRepository;
         _uow = uow;
@@ -40,16 +40,16 @@ public class UserServices : IUserService
         await _uow.CommitTransactionAsync();
     }
 
-    public Task<User> GetUserByIdAsync(Guid id)
+    public async Task<User> GetUserByIdAsync(Guid id)
     {
-        var user = _userRepository.GetByIdAsync(id);
+        var user = await _userRepository.GetByIdAsync(id);
 
         return user;
     }
 
-    public Task<List<User>> GetUsersAsync()
+    public async Task<List<User>> GetUsersAsync()
     {
-        var users = _userRepository.GetAsync();
+        var users = await _userRepository.GetAsync();
 
         return users;
     }

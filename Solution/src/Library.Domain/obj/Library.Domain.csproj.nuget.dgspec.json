@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Domain\\Library.Domain.csproj": {}
+    "C:\\Users\\Dev-Headsoft\\Documents\\Library-DDD\\Solution\\src\\Library.Domain\\Library.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Domain\\Library.Domain.csproj": {
+    "C:\\Users\\Dev-Headsoft\\Documents\\Library-DDD\\Solution\\src\\Library.Domain\\Library.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Domain\\Library.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Dev-Headsoft\\Documents\\Library-DDD\\Solution\\src\\Library.Domain\\Library.Domain.csproj",
         "projectName": "Library.Domain",
-        "projectPath": "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Domain\\Library.Domain.csproj",
-        "packagesPath": "C:\\Users\\Usuário\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Domain\\obj\\",
+        "projectPath": "C:\\Users\\Dev-Headsoft\\Documents\\Library-DDD\\Solution\\src\\Library.Domain\\Library.Domain.csproj",
+        "packagesPath": "C:\\Users\\Dev-Headsoft\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dev-Headsoft\\Documents\\Library-DDD\\Solution\\src\\Library.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Usuário\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Dev-Headsoft\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"

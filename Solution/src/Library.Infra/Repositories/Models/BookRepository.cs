@@ -23,7 +23,7 @@ public class BookRepository : RepositoryBase<Book>, IBookRepository
         return book;
     }
 
-    public async Task<List<Book>> GetBookByTitleAsync(string title)
+    public async Task<List<Book>> GetBooksByTitleAsync(string title)
     {
         var books = await _dbSet.Where(x => x.Title == title).ToListAsync();
         return books;
