@@ -13,7 +13,7 @@ public class BookRepository : RepositoryBase<Book>, IBookRepository
 
     public async Task<Book> GetBookByIsbnAsync(string isbn)
     {
-        var book = await _dbSet.FindAsync(isbn);
+        var book = await _dbSet.FirstOrDefaultAsync(x => x.Isbn == isbn);
 
         if (book is null)
         {
@@ -25,13 +25,18 @@ public class BookRepository : RepositoryBase<Book>, IBookRepository
 
     public async Task<List<Book>> GetBooksByTitleAsync(string title)
     {
-        var books = await _dbSet.Where(x => x.Title == title).ToListAsync();
+        var books = await _dbSet
+            .Where(b => b.Title.ToLower().Contains(title.ToLower()))
+            .ToListAsync();
+
         return books;
     }
 
     public async Task<List<Book>> GetBooksByAuthorAsync(string author)
     {
-        var books = await _dbSet.Where(x => x.Author == author).ToListAsync();
+        var books = await _dbSet
+            .Where(b => b.Author.ToLower().Contains(author.ToLower()))
+            .ToListAsync();
         return books;
     }
 }

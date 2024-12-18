@@ -59,6 +59,11 @@ public class LoanService : ILoanService
         var loanUser = await ValidateUserAsync(loanDto.UserId);
         var loanBook = await ValidateBookAsync(loanDto.BookId);
 
+        if (loanBook.IsBorrowed)
+        {
+            throw new ArgumentException($"Book {loanBook.Title} is already borrowed.");
+        }
+
         await UpdateBookStatusAsync(loanBook.Id, true);
 
         const int loanDurationDays = 14;

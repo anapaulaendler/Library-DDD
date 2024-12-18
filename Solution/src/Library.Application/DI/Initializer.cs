@@ -9,7 +9,7 @@ namespace Library.Application.DI;
 
 public class Initializer
 {
-    public static void Configure (IServiceCollection services, string connection)
+    public static void Configure (IServiceCollection services, string? connection)
     {
         services.AddDbContext<AppDbContext> (options => options.UseSqlite(connection));
 
