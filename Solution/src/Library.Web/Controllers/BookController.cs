@@ -67,9 +67,9 @@ public class BookController : ControllerBase
     }
 
     [HttpPut("{bookId}")]
-    public async Task<Book> UpdateBookAsync(Guid id, Book updatedBook)
+    public async Task<Book> UpdateBookAsync(Guid bookId, Book updatedBook)
     {
-        var book = await _bookService.UpdateBookAsync(id, updatedBook);
+        var book = await _bookService.UpdateBookAsync(bookId, updatedBook);
 
         return book;
     }

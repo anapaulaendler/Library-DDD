@@ -57,13 +57,16 @@ public class LoanService : ILoanService
         await _uow.BeginTransactionAsync();
 
         var loanUser = await ValidateUserAsync(loanDto.UserId);
-        var loanBook = await ValidateBookAsync(loanDto.BookId);
+        if (loanUser.Role != Role.Member)
+        {
+            throw new UnauthorizedAccessException($"Only users with the role 'Member' can borrow books.");
+        }
 
+        var loanBook = await ValidateBookAsync(loanDto.BookId);
         if (loanBook.IsBorrowed)
         {
             throw new ArgumentException($"Book {loanBook.Title} is already borrowed.");
         }
-
         await UpdateBookStatusAsync(loanBook.Id, true);
 
         const int loanDurationDays = 14;

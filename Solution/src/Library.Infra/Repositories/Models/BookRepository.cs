@@ -26,7 +26,7 @@ public class BookRepository : RepositoryBase<Book>, IBookRepository
     public async Task<List<Book>> GetBooksByTitleAsync(string title)
     {
         var books = await _dbSet
-            .Where(b => b.Title.ToLower().Contains(title.ToLower()))
+            .Where(b => b.Title.ToLower().Replace(" ", "").Contains(title.ToLower()))
             .ToListAsync();
 
         return books;
@@ -35,8 +35,9 @@ public class BookRepository : RepositoryBase<Book>, IBookRepository
     public async Task<List<Book>> GetBooksByAuthorAsync(string author)
     {
         var books = await _dbSet
-            .Where(b => b.Author.ToLower().Contains(author.ToLower()))
+            .Where(b => b.Author.ToLower().Replace(" ", "").Contains(author.ToLower()))
             .ToListAsync();
+        
         return books;
     }
 }

@@ -10,3 +10,15 @@ C:\Users\Dev-Headsoft\Documents\Library-DDD\Solution\src\Library.Domain\obj\Debu
 C:\Users\Dev-Headsoft\Documents\Library-DDD\Solution\src\Library.Domain\obj\Debug\net9.0\refint\Library.Domain.dll
 C:\Users\Dev-Headsoft\Documents\Library-DDD\Solution\src\Library.Domain\obj\Debug\net9.0\Library.Domain.pdb
 C:\Users\Dev-Headsoft\Documents\Library-DDD\Solution\src\Library.Domain\obj\Debug\net9.0\ref\Library.Domain.dll
+C:\Users\Usuário\OneDrive\Documentos\Estágio\Library-DDD\Solution\src\Library.Domain\bin\Debug\net9.0\Library.Domain.deps.json
+C:\Users\Usuário\OneDrive\Documentos\Estágio\Library-DDD\Solution\src\Library.Domain\bin\Debug\net9.0\Library.Domain.dll
+C:\Users\Usuário\OneDrive\Documentos\Estágio\Library-DDD\Solution\src\Library.Domain\bin\Debug\net9.0\Library.Domain.pdb
+C:\Users\Usuário\OneDrive\Documentos\Estágio\Library-DDD\Solution\src\Library.Domain\obj\Debug\net9.0\Library.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuário\OneDrive\Documentos\Estágio\Library-DDD\Solution\src\Library.Domain\obj\Debug\net9.0\Library.Domain.AssemblyInfoInputs.cache
+C:\Users\Usuário\OneDrive\Documentos\Estágio\Library-DDD\Solution\src\Library.Domain\obj\Debug\net9.0\Library.Domain.AssemblyInfo.cs
+C:\Users\Usuário\OneDrive\Documentos\Estágio\Library-DDD\Solution\src\Library.Domain\obj\Debug\net9.0\Library.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Usuário\OneDrive\Documentos\Estágio\Library-DDD\Solution\src\Library.Domain\obj\Debug\net9.0\Library.Domain.sourcelink.json
+C:\Users\Usuário\OneDrive\Documentos\Estágio\Library-DDD\Solution\src\Library.Domain\obj\Debug\net9.0\Library.Domain.dll
+C:\Users\Usuário\OneDrive\Documentos\Estágio\Library-DDD\Solution\src\Library.Domain\obj\Debug\net9.0\refint\Library.Domain.dll
+C:\Users\Usuário\OneDrive\Documentos\Estágio\Library-DDD\Solution\src\Library.Domain\obj\Debug\net9.0\Library.Domain.pdb
+C:\Users\Usuário\OneDrive\Documentos\Estágio\Library-DDD\Solution\src\Library.Domain\obj\Debug\net9.0\ref\Library.Domain.dll

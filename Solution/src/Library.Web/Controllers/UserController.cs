@@ -49,9 +49,9 @@ public class UserController : ControllerBase
     }
 
     [HttpPut("{userId}")]
-    public async Task<User> UpdateUserAsync(Guid id, User updatedUser)
+    public async Task<User> UpdateUserAsync(Guid userId, User updatedUser)
     {
-        var user = await _userService.UpdateUserAsync(id, updatedUser);
+        var user = await _userService.UpdateUserAsync(userId, updatedUser);
 
         return user;
     }
