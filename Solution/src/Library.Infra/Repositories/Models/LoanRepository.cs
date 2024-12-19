@@ -14,16 +14,24 @@ public class LoanRepository : RepositoryBase<Loan>, ILoanRepository
     public async Task<Loan> FindSpecificLoanByBookIdAsync(Guid bookId)
     {
         var loan = await _dbSet
-        .Where(l => l.BookId == bookId && l.ReturnDate == null)
-        .OrderBy(l => Math.Abs((l.LoanDate - DateTime.Now).Ticks))
-        .FirstOrDefaultAsync();
+            .Where(l => l.BookId == bookId && l.ReturnDate == null)
+            .ToListAsync(); 
 
-        if (loan is null)
+        if (loan is null || !loan.Any())
         {
             throw new ArgumentException($"No active loan found for the book with ID {bookId}.");
         }
 
-        return loan;
+        var closestLoan = loan
+            .OrderBy(l => Math.Abs((l.LoanDate - DateTime.Now).Ticks))
+            .FirstOrDefault();
+
+        if (closestLoan == null)
+        {
+            throw new ArgumentException($"No active loan found for the book with ID {bookId}.");
+        }
+
+        return closestLoan;
     }
 
     public async Task<List<Loan>> GetLoansByBookAsync(Guid id)

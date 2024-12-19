@@ -42,14 +42,14 @@ public class LoanController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<Loan> NewLoanAsync(LoanDTO loanDTO)
+    public async Task<Loan> NewLoanAsync([FromBody] LoanDTO loanDTO)
     {
         return await _loanService.NewLoanAsync(loanDTO);
     }
 
     [HttpPut("{bookId}")]
-    public async Task<Loan> UpdateLoanAsync(Guid bookId)
+    public async Task<Loan> ReturnBookAsync(Guid bookId)
     {
-        return await _loanService.UpdateLoanAsync(bookId);
+        return await _loanService.ReturnBookAsync(bookId);
     }
 }

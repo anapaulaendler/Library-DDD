@@ -9,5 +9,5 @@ public interface ILoanService
     Task<List<Loan>> GetLoansByUserAsync(Guid id);
     Task<List<Loan>> GetLoansByBookAsync(Guid id);
     Task<string> GetUserTotalFineAsync(Guid id);
-    Task<Loan> UpdateLoanAsync(Guid bookId);
+    Task<Loan> ReturnBookAsync(Guid bookId);
 }

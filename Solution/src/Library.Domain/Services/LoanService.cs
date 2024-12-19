@@ -67,6 +67,7 @@ public class LoanService : ILoanService
         {
             throw new ArgumentException($"Book {loanBook.Title} is already borrowed.");
         }
+
         await UpdateBookStatusAsync(loanBook.Id, true);
 
         const int loanDurationDays = 14;
@@ -77,7 +78,7 @@ public class LoanService : ILoanService
             BookId = loanDto.BookId,
             UserId = loanDto.UserId,
             LoanDate = loanDto.LoanDate,
-            ReturnDate = loanDto.LoanDate.AddDays(loanDurationDays),
+            DueDate = loanDto.LoanDate.AddDays(loanDurationDays),
 
             User = loanUser,
             Book = loanBook
@@ -89,7 +90,7 @@ public class LoanService : ILoanService
         return newLoan;
     }
 
-    public async Task<Loan> UpdateLoanAsync(Guid bookId)
+    public async Task<Loan> ReturnBookAsync(Guid bookId)
     {
         var book = await ValidateBookAsync(bookId);
         await UpdateBookStatusAsync(book.Id, false);
@@ -110,7 +111,7 @@ public class LoanService : ILoanService
     private async Task<User> ValidateUserAsync(Guid userId)
     {
         var user = await _userRepository.GetByIdAsync(userId);
-        if (user == null)
+        if (user is null)
         {
             throw new ArgumentException($"User with ID {userId} does not exist.");
         }
@@ -120,7 +121,7 @@ public class LoanService : ILoanService
     private async Task<Book> ValidateBookAsync(Guid bookId)
     {
         var book = await _bookRepository.GetByIdAsync(bookId);
-        if (book == null)
+        if (book is null)
         {
             throw new ArgumentException($"Book with ID {bookId} does not exist.");
         }
