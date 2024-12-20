@@ -17,6 +17,8 @@ public class UserService : IUserService
     public async Task CreateUserAsync(User user)
     {
         await _uow.BeginTransactionAsync();
+        ValidateEmail(user.Email);
+        ValidatePassword(user.Password);
 
         var newUser = new User
         {
@@ -29,6 +31,27 @@ public class UserService : IUserService
 
         await _userRepository.AddAsync(newUser);
         await _uow.CommitTransactionAsync();
+    }
+
+    private void ValidatePassword(string password)
+    {
+        if (password.Length < 6)
+        {
+            throw new InvalidDataException("The password has to have more than 5 characters.");
+        } else if (password.Length > 50)
+        {
+            throw new InvalidDataException("The password cannot have more than 50 characters.");
+        } 
+    }
+
+    private async void ValidateEmail(string email)
+    {
+        User user = await _userRepository.GetUserByEmailAsync(email);
+
+        if (user is not null)
+        {
+            throw new InvalidDataException("Este e-mail já está sendo utilizado.");
+        }
     }
 
     public async Task DeleteUserAsync(Guid id)
