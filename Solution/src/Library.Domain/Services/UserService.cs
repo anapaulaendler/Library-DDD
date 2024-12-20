@@ -23,6 +23,7 @@ public class UserService : IUserService
             Id = user.Id,
             Name = user.Name,
             Email = user.Email,
+            Password = user.Password,
             Role = user.Role
         };
 

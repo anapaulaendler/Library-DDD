@@ -56,7 +56,7 @@ public class LoanService : ILoanService
     {
         await _uow.BeginTransactionAsync();
 
-        var loanUser = await ValidateUserAsync(loanDto.UserId);
+        var loanUser = await ValidateUserByEmailAsync(loanDto.UserEmail);
         if (loanUser.Role != Role.Member)
         {
             throw new UnauthorizedAccessException($"Only users with the role 'Member' can borrow books.");
@@ -76,7 +76,7 @@ public class LoanService : ILoanService
         {
             Id = Guid.NewGuid(),
             BookId = loanDto.BookId,
-            UserId = loanDto.UserId,
+            UserEmail = loanDto.UserEmail,
             LoanDate = loanDto.LoanDate,
             DueDate = loanDto.LoanDate.AddDays(loanDurationDays),
 
@@ -118,6 +118,15 @@ public class LoanService : ILoanService
         return user;
     }
 
+    private async Task<User> ValidateUserByEmailAsync(string userEmail)
+    {
+        var user = await _userRepository.GetUserByEmailAsync(userEmail);
+        if (user is null)
+        {
+            throw new ArgumentException($"User with ID {userEmail} does not exist.");
+        }
+        return user;
+    }
     private async Task<Book> ValidateBookAsync(Guid bookId)
     {
         var book = await _bookRepository.GetByIdAsync(bookId);
