@@ -839,6 +839,9 @@
       "System.Text.Json/9.0.0": {},
       "System.Threading.Channels/7.0.0": {},
       "Library.Domain/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.0"
+        },
         "runtime": {
           "Library.Domain.dll": {
             "assemblyVersion": "1.0.0",

@@ -1,14 +1,8 @@
 using Library.Application.DI;
-using Library.Infra.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 
-Initializer.Configure(builder.Services, builder.Configuration.GetConnectionString(nameof(AppDbContext)));
-builder.Services.AddControllers()
-    .AddJsonOptions(opts =>
-    {
-        opts.JsonSerializerOptions.Converters.Add(new RoleConverter());
-    });
+Initializer.Register(builder.Services, builder.Configuration);
 
 builder.Services.AddOpenApi();
 

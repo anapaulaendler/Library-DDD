@@ -53,7 +53,7 @@ namespace Library.Infra.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("c6e4a1a8-afb6-4136-875c-491f1e421b2d"),
+                            Id = new Guid("1b9504b1-7940-4285-8acf-62acb09ad5eb"),
                             Author = "George Orwell",
                             Genre = "Dystopian",
                             IsBorrowed = false,
@@ -63,7 +63,7 @@ namespace Library.Infra.Migrations
                         },
                         new
                         {
-                            Id = new Guid("cb8ded69-62a0-4a09-8186-16258574d1e0"),
+                            Id = new Guid("08f255e5-96aa-4ae1-90cc-76a882431d2c"),
                             Author = "Harper Lee",
                             Genre = "Fiction",
                             IsBorrowed = false,
@@ -73,7 +73,7 @@ namespace Library.Infra.Migrations
                         },
                         new
                         {
-                            Id = new Guid("9a866ef3-cdbe-4d71-9d46-510d2a505562"),
+                            Id = new Guid("d49c6375-035d-48aa-868c-295cc5c0139c"),
                             Author = "F. Scott Fitzgerald",
                             Genre = "Classic",
                             IsBorrowed = false,
@@ -83,7 +83,7 @@ namespace Library.Infra.Migrations
                         },
                         new
                         {
-                            Id = new Guid("22583aa3-b586-4d2f-9144-dd701126a487"),
+                            Id = new Guid("1ed9ef42-0b2e-4f55-90e5-4283448c902c"),
                             Author = "Aldous Huxley",
                             Genre = "Science Fiction",
                             IsBorrowed = false,
@@ -93,7 +93,7 @@ namespace Library.Infra.Migrations
                         },
                         new
                         {
-                            Id = new Guid("5290e6b1-e26a-4d7f-880a-94278c46b4dc"),
+                            Id = new Guid("4b338981-e239-4457-a071-3ef87b0655f4"),
                             Author = "J.D. Salinger",
                             Genre = "Fiction",
                             IsBorrowed = false,
@@ -160,35 +160,35 @@ namespace Library.Infra.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("9f0fc384-9407-4053-b023-8f4f567dafad"),
+                            Id = new Guid("767d5353-88ac-4f54-976e-864ce1cdeb15"),
                             Email = "alice@example.com",
                             Name = "Alice",
                             Role = (byte)2
                         },
                         new
                         {
-                            Id = new Guid("058fff06-30b5-4f6f-8dcd-3a5dd9e38440"),
+                            Id = new Guid("c338c40f-de7c-4b7a-876d-4ebd75faff87"),
                             Email = "bob@example.com",
                             Name = "Bob",
                             Role = (byte)1
                         },
                         new
                         {
-                            Id = new Guid("9c5359aa-2548-402f-90a0-c7e82fe225ae"),
+                            Id = new Guid("7f58efc0-ed98-4bd9-a934-74c3e43f7f1a"),
                             Email = "charlie@example.com",
                             Name = "Charlie",
                             Role = (byte)0
                         },
                         new
                         {
-                            Id = new Guid("f047a248-dd4d-4ab4-b021-11160d6a5396"),
+                            Id = new Guid("84a35af5-3a39-44a4-a7fa-736ee7df08e1"),
                             Email = "diana@example.com",
                             Name = "Diana",
                             Role = (byte)2
                         },
                         new
                         {
-                            Id = new Guid("4de942c8-c2f1-409f-bd1c-bf126e6847fd"),
+                            Id = new Guid("a7e7e46f-90ba-441f-9b08-9de566fe01a5"),
                             Email = "eve@example.com",
                             Name = "Eve",
                             Role = (byte)2

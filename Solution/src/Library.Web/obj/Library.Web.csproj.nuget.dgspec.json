@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Web\\Library.Web.csproj": {}
+    "C:\\Users\\Dev-Headsoft\\Documents\\Library-DDD\\Solution\\src\\Library.Web\\Library.Web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Application\\Library.Application.csproj": {
+    "C:\\Users\\Dev-Headsoft\\Documents\\Library-DDD\\Solution\\src\\Library.Application\\Library.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Application\\Library.Application.csproj",
+        "projectUniqueName": "C:\\Users\\Dev-Headsoft\\Documents\\Library-DDD\\Solution\\src\\Library.Application\\Library.Application.csproj",
         "projectName": "Library.Application",
-        "projectPath": "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Application\\Library.Application.csproj",
-        "packagesPath": "C:\\Users\\Usuário\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Application\\obj\\",
+        "projectPath": "C:\\Users\\Dev-Headsoft\\Documents\\Library-DDD\\Solution\\src\\Library.Application\\Library.Application.csproj",
+        "packagesPath": "C:\\Users\\Dev-Headsoft\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dev-Headsoft\\Documents\\Library-DDD\\Solution\\src\\Library.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Usuário\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Dev-Headsoft\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -26,11 +26,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Domain\\Library.Domain.csproj": {
-                "projectPath": "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Domain\\Library.Domain.csproj"
-              },
-              "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Infra\\Library.Infra.csproj": {
-                "projectPath": "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Infra\\Library.Infra.csproj"
+              "C:\\Users\\Dev-Headsoft\\Documents\\Library-DDD\\Solution\\src\\Library.Infra\\Library.Infra.csproj": {
+                "projectPath": "C:\\Users\\Dev-Headsoft\\Documents\\Library-DDD\\Solution\\src\\Library.Infra\\Library.Infra.csproj"
               }
             }
           }
@@ -50,18 +47,6 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "dependencies": {
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[9.0.0, )"
-            },
-            "Microsoft.EntityFrameworkCore.Sqlite": {
-              "target": "Package",
-              "version": "[9.0.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -82,17 +67,17 @@
         }
       }
     },
-    "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Domain\\Library.Domain.csproj": {
+    "C:\\Users\\Dev-Headsoft\\Documents\\Library-DDD\\Solution\\src\\Library.Domain\\Library.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Domain\\Library.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Dev-Headsoft\\Documents\\Library-DDD\\Solution\\src\\Library.Domain\\Library.Domain.csproj",
         "projectName": "Library.Domain",
-        "projectPath": "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Domain\\Library.Domain.csproj",
-        "packagesPath": "C:\\Users\\Usuário\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Domain\\obj\\",
+        "projectPath": "C:\\Users\\Dev-Headsoft\\Documents\\Library-DDD\\Solution\\src\\Library.Domain\\Library.Domain.csproj",
+        "packagesPath": "C:\\Users\\Dev-Headsoft\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dev-Headsoft\\Documents\\Library-DDD\\Solution\\src\\Library.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Usuário\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Dev-Headsoft\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -121,6 +106,12 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -141,17 +132,17 @@
         }
       }
     },
-    "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Infra\\Library.Infra.csproj": {
+    "C:\\Users\\Dev-Headsoft\\Documents\\Library-DDD\\Solution\\src\\Library.Infra\\Library.Infra.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Infra\\Library.Infra.csproj",
+        "projectUniqueName": "C:\\Users\\Dev-Headsoft\\Documents\\Library-DDD\\Solution\\src\\Library.Infra\\Library.Infra.csproj",
         "projectName": "Library.Infra",
-        "projectPath": "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Infra\\Library.Infra.csproj",
-        "packagesPath": "C:\\Users\\Usuário\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Infra\\obj\\",
+        "projectPath": "C:\\Users\\Dev-Headsoft\\Documents\\Library-DDD\\Solution\\src\\Library.Infra\\Library.Infra.csproj",
+        "packagesPath": "C:\\Users\\Dev-Headsoft\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dev-Headsoft\\Documents\\Library-DDD\\Solution\\src\\Library.Infra\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Usuário\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Dev-Headsoft\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -163,8 +154,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Domain\\Library.Domain.csproj": {
-                "projectPath": "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Domain\\Library.Domain.csproj"
+              "C:\\Users\\Dev-Headsoft\\Documents\\Library-DDD\\Solution\\src\\Library.Domain\\Library.Domain.csproj": {
+                "projectPath": "C:\\Users\\Dev-Headsoft\\Documents\\Library-DDD\\Solution\\src\\Library.Domain\\Library.Domain.csproj"
               }
             }
           }
@@ -228,17 +219,17 @@
         }
       }
     },
-    "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Web\\Library.Web.csproj": {
+    "C:\\Users\\Dev-Headsoft\\Documents\\Library-DDD\\Solution\\src\\Library.Web\\Library.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Web\\Library.Web.csproj",
+        "projectUniqueName": "C:\\Users\\Dev-Headsoft\\Documents\\Library-DDD\\Solution\\src\\Library.Web\\Library.Web.csproj",
         "projectName": "Library.Web",
-        "projectPath": "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Web\\Library.Web.csproj",
-        "packagesPath": "C:\\Users\\Usuário\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Web\\obj\\",
+        "projectPath": "C:\\Users\\Dev-Headsoft\\Documents\\Library-DDD\\Solution\\src\\Library.Web\\Library.Web.csproj",
+        "packagesPath": "C:\\Users\\Dev-Headsoft\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dev-Headsoft\\Documents\\Library-DDD\\Solution\\src\\Library.Web\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Usuário\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Dev-Headsoft\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -250,11 +241,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Application\\Library.Application.csproj": {
-                "projectPath": "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Application\\Library.Application.csproj"
-              },
-              "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Domain\\Library.Domain.csproj": {
-                "projectPath": "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Domain\\Library.Domain.csproj"
+              "C:\\Users\\Dev-Headsoft\\Documents\\Library-DDD\\Solution\\src\\Library.Application\\Library.Application.csproj": {
+                "projectPath": "C:\\Users\\Dev-Headsoft\\Documents\\Library-DDD\\Solution\\src\\Library.Application\\Library.Application.csproj"
               }
             }
           }
@@ -276,16 +264,6 @@
           "targetAlias": "net9.0",
           "dependencies": {
             "Microsoft.AspNetCore.OpenApi": {
-              "target": "Package",
-              "version": "[9.0.0, )"
-            },
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[9.0.0, )"
-            },
-            "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[9.0.0, )"
             }

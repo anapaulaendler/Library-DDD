@@ -1,5 +1,4 @@
 C:\Users\Dev-Headsoft\Documents\Library-DDD\Solution\src\Library.Application\bin\Debug\net9.0\Library.Application.deps.json
-C:\Users\Dev-Headsoft\Documents\Library-DDD\Solution\src\Library.Application\bin\Debug\net9.0\Library.Application.runtimeconfig.json
 C:\Users\Dev-Headsoft\Documents\Library-DDD\Solution\src\Library.Application\bin\Debug\net9.0\Library.Application.dll
 C:\Users\Dev-Headsoft\Documents\Library-DDD\Solution\src\Library.Application\bin\Debug\net9.0\Library.Application.pdb
 C:\Users\Dev-Headsoft\Documents\Library-DDD\Solution\src\Library.Application\bin\Debug\net9.0\Library.Domain.dll
@@ -16,7 +15,6 @@ C:\Users\Dev-Headsoft\Documents\Library-DDD\Solution\src\Library.Application\obj
 C:\Users\Dev-Headsoft\Documents\Library-DDD\Solution\src\Library.Application\obj\Debug\net9.0\Library.Application.dll
 C:\Users\Dev-Headsoft\Documents\Library-DDD\Solution\src\Library.Application\obj\Debug\net9.0\refint\Library.Application.dll
 C:\Users\Dev-Headsoft\Documents\Library-DDD\Solution\src\Library.Application\obj\Debug\net9.0\Library.Application.pdb
-C:\Users\Dev-Headsoft\Documents\Library-DDD\Solution\src\Library.Application\obj\Debug\net9.0\Library.Application.genruntimeconfig.cache
 C:\Users\Dev-Headsoft\Documents\Library-DDD\Solution\src\Library.Application\obj\Debug\net9.0\ref\Library.Application.dll
 C:\Users\Usuário\OneDrive\Documentos\Estágio\Library-DDD\Solution\src\Library.Application\bin\Debug\net9.0\Library.Application.deps.json
 C:\Users\Usuário\OneDrive\Documentos\Estágio\Library-DDD\Solution\src\Library.Application\bin\Debug\net9.0\Library.Application.runtimeconfig.json

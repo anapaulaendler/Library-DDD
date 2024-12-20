@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "+okRc7L44+o=",
+  "dgSpecHash": "HMY//pkVtYY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Usuário\\OneDrive\\Documentos\\Estágio\\Library-DDD\\Solution\\src\\Library.Domain\\Library.Domain.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Dev-Headsoft\\Documents\\Library-DDD\\Solution\\src\\Library.Domain\\Library.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Dev-Headsoft\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.0\\microsoft.extensions.dependencyinjection.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\Dev-Headsoft\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\9.0.0\\microsoft.extensions.logging.abstractions.9.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
