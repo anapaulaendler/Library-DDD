@@ -5,8 +5,9 @@ var builder = WebApplication.CreateBuilder(args);
 Initializer.Register(builder.Services, builder.Configuration);
 
 builder.Services.AddOpenApi();
-
+builder.Services.AddAuthorization();
 builder.Services.AddMemoryCache();
+builder.Services.AddControllers();
 
 var app = builder.Build();
 
@@ -16,7 +17,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
 
 app.MapControllers();

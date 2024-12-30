@@ -14,6 +14,37 @@
           "Library.Application.dll": {}
         }
       },
+      "Microsoft.AspNetCore.Cryptography.Internal/9.0.0": {
+        "runtime": {
+          "lib/net9.0/Microsoft.AspNetCore.Cryptography.Internal.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.52903"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Cryptography.KeyDerivation/9.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Cryptography.Internal": "9.0.0"
+        },
+        "runtime": {
+          "lib/net9.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.52903"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Identity.EntityFrameworkCore/9.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Relational": "9.0.0",
+          "Microsoft.Extensions.Identity.Stores": "9.0.0"
+        },
+        "runtime": {
+          "lib/net9.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.52903"
+          }
+        }
+      },
       "Microsoft.Data.Sqlite.Core/9.0.0": {
         "dependencies": {
           "SQLitePCLRaw.core": "2.1.10"
@@ -229,6 +260,32 @@
           }
         }
       },
+      "Microsoft.Extensions.Identity.Core/9.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Cryptography.KeyDerivation": "9.0.0",
+          "Microsoft.Extensions.Logging": "9.0.0",
+          "Microsoft.Extensions.Options": "9.0.0"
+        },
+        "runtime": {
+          "lib/net9.0/Microsoft.Extensions.Identity.Core.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.52903"
+          }
+        }
+      },
+      "Microsoft.Extensions.Identity.Stores/9.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Caching.Abstractions": "9.0.0",
+          "Microsoft.Extensions.Identity.Core": "9.0.0",
+          "Microsoft.Extensions.Logging": "9.0.0"
+        },
+        "runtime": {
+          "lib/net9.0/Microsoft.Extensions.Identity.Stores.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.52903"
+          }
+        }
+      },
       "Microsoft.Extensions.Logging/9.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "9.0.0",
@@ -433,6 +490,7 @@
       "Library.Infra/1.0.0": {
         "dependencies": {
           "Library.Domain": "1.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "9.0.0",
           "Microsoft.EntityFrameworkCore.Sqlite": "9.0.0",
           "Microsoft.Extensions.Configuration": "9.0.0",
           "Microsoft.Extensions.Configuration.FileExtensions": "9.0.0",
@@ -452,6 +510,27 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Microsoft.AspNetCore.Cryptography.Internal/9.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-M1dzTEl+2+RqT4vWcqEpWasPXHd58wC93U7QMlmPSmx+qixyVxCQjZ183wr7Wa68b4pF7wC501MU9rdA0ZNhMg==",
+      "path": "microsoft.aspnetcore.cryptography.internal/9.0.0",
+      "hashPath": "microsoft.aspnetcore.cryptography.internal.9.0.0.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Cryptography.KeyDerivation/9.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9X4cx2IHNpYb9ka984BjDpJnKkindW17Z2kR/RI5pbTcbVUVMJjiAKnBhAqH24KtAEf1AU64LD60byzCn0/n8w==",
+      "path": "microsoft.aspnetcore.cryptography.keyderivation/9.0.0",
+      "hashPath": "microsoft.aspnetcore.cryptography.keyderivation.9.0.0.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Identity.EntityFrameworkCore/9.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fwQkBQGaiRKDQWBc7PXxDiDXtsUsRPL88Jp0CqjqoDhd9p5uHSyuv6g3ALq2EbCvKcWk/7pOKsJiDomPvp/ptA==",
+      "path": "microsoft.aspnetcore.identity.entityframeworkcore/9.0.0",
+      "hashPath": "microsoft.aspnetcore.identity.entityframeworkcore.9.0.0.nupkg.sha512"
     },
     "Microsoft.Data.Sqlite.Core/9.0.0": {
       "type": "package",
@@ -585,6 +664,20 @@
       "sha512": "sha512-jGFKZiXs2HNseK3NK/rfwHNNovER71jSj4BD1a/649ml9+h6oEtYd0GSALZDNW8jZ2Rh+oAeadOa6sagYW1F2A==",
       "path": "microsoft.extensions.filesystemglobbing/9.0.0",
       "hashPath": "microsoft.extensions.filesystemglobbing.9.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Identity.Core/9.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+cQjUs8PIheIMALzrf/e4gW6A/yOK8XYBxeEmAfLvVIaV9lsBGvVT0zjEZ1KPQDJ9nUeQ9uAw077J7LPUwv8wA==",
+      "path": "microsoft.extensions.identity.core/9.0.0",
+      "hashPath": "microsoft.extensions.identity.core.9.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Identity.Stores/9.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XG3opf0KgWoYAUdLRhrIvI46W+/E45Ov8rzgwr0omrq5u06MCrsuMm0nPmd+pIWjMXRxbBk1uL47zGyW1lI5Hw==",
+      "path": "microsoft.extensions.identity.stores/9.0.0",
+      "hashPath": "microsoft.extensions.identity.stores.9.0.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Logging/9.0.0": {
       "type": "package",

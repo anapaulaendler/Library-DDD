@@ -138,3 +138,4 @@ C:\Users\Usuário\OneDrive\Documentos\Estágio\Library-DDD\Solution\src\Library.
 C:\Users\Usuário\OneDrive\Documentos\Estágio\Library-DDD\Solution\src\Library.Web\obj\Debug\net9.0\Library.Web.pdb
 C:\Users\Usuário\OneDrive\Documentos\Estágio\Library-DDD\Solution\src\Library.Web\obj\Debug\net9.0\Library.Web.genruntimeconfig.cache
 C:\Users\Usuário\OneDrive\Documentos\Estágio\Library-DDD\Solution\src\Library.Web\obj\Debug\net9.0\ref\Library.Web.dll
+c:\Users\Dev-Headsoft\Documents\Library-DDD\Solution\src\Library.Web\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
