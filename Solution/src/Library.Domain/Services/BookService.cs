@@ -1,17 +1,20 @@
 using Library.Domain.Interfaces;
 using Library.Domain.Models;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace Library.Domain.Services;
 
 public class BookService : IBookService
 {
     private readonly IBookRepository _bookRepository;
+    private readonly IMemoryCache _cache;
     private readonly IUnitOfWork _uow;
 
-    public BookService(IBookRepository bookRepository, IUnitOfWork uow)
+    public BookService(IBookRepository bookRepository, IUnitOfWork uow, IMemoryCache cache)
     {
         _bookRepository = bookRepository;
         _uow = uow;
+        _cache = cache;
     }
 
     public async Task CreateBookAsync(Book book)
@@ -108,8 +111,20 @@ public class BookService : IBookService
 
     public async Task<List<Book>> GetBooksAsync()
     {
-        var books = await _bookRepository.GetAsync();
+        const string cacheKey = "Books";
+        if (!_cache.TryGetValue(cacheKey, out List<Book>? books))
+        {
+            books = await _bookRepository.GetAsync();
 
-        return books;
+            var cacheOptions = new MemoryCacheEntryOptions
+            {
+                AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(10),
+                SlidingExpiration = TimeSpan.FromMinutes(5)
+            };
+
+            _cache.Set(cacheKey, books, cacheOptions);
+        }
+
+        return books ?? new List<Book>();
     }
 }

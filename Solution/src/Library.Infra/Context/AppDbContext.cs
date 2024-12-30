@@ -20,11 +20,11 @@ public class AppDbContext : DbContext
         base.OnModelCreating(modelBuilder);
 
         modelBuilder.Entity<User>().HasData(
-            new User { Id = Guid.NewGuid(), Name = "Alice", Email = "alice@example.com", Role = Role.Member },
-            new User { Id = Guid.NewGuid(), Name = "Bob", Email = "bob@example.com", Role = Role.Librarian },
-            new User { Id = Guid.NewGuid(), Name = "Charlie", Email = "charlie@example.com", Role = Role.Admin },
-            new User { Id = Guid.NewGuid(), Name = "Diana", Email = "diana@example.com", Role = Role.Member },
-            new User { Id = Guid.NewGuid(), Name = "Eve", Email = "eve@example.com", Role = Role.Member }
+            new User { Id = Guid.NewGuid(), Name = "Alice", Email = "alice@example.com", Role = Role.Member, Password = "123@abc" },
+            new User { Id = Guid.NewGuid(), Name = "Bob", Email = "bob@example.com", Role = Role.Librarian, Password = "123@abc" },
+            new User { Id = Guid.NewGuid(), Name = "Charlie", Email = "charlie@example.com", Role = Role.Admin, Password = "123@abc" },
+            new User { Id = Guid.NewGuid(), Name = "Diana", Email = "diana@example.com", Role = Role.Member, Password = "123@abc" },
+            new User { Id = Guid.NewGuid(), Name = "Eve", Email = "eve@example.com", Role = Role.Member, Password = "123@abc" }
         );
 
         modelBuilder.Entity<Book>().HasData(

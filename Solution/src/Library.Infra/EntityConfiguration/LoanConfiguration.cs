@@ -14,6 +14,7 @@ internal class LoanConfiguration : IEntityTypeConfiguration<Loan>
         builder.Property(x => x.UserId).IsRequired();
         builder.Property(x => x.BookId).IsRequired();
 
+         builder.Property(x => x.UserEmail).HasColumnName("User E-mail").IsRequired();
         builder.Property(x => x.LoanDate).HasColumnName("Loan Date").IsRequired();
         builder.Property(x => x.DueDate).HasColumnName("Due Date").IsRequired();
         builder.Property(x => x.ReturnDate).HasColumnName("Return Date").IsRequired(false);

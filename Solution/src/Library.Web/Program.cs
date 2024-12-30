@@ -6,6 +6,8 @@ Initializer.Register(builder.Services, builder.Configuration);
 
 builder.Services.AddOpenApi();
 
+builder.Services.AddMemoryCache();
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())

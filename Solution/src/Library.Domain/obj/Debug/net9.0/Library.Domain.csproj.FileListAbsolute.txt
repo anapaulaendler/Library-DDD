@@ -23,3 +23,4 @@ C:\Users\Usuário\OneDrive\Documentos\Estágio\Library-DDD\Solution\src\Library.
 C:\Users\Usuário\OneDrive\Documentos\Estágio\Library-DDD\Solution\src\Library.Domain\obj\Debug\net9.0\Library.Domain.pdb
 C:\Users\Usuário\OneDrive\Documentos\Estágio\Library-DDD\Solution\src\Library.Domain\obj\Debug\net9.0\ref\Library.Domain.dll
 C:\Users\Dev-Headsoft\Documents\Library-DDD\Solution\src\Library.Domain\obj\Debug\net9.0\Library.Domain.csproj.AssemblyReference.cache
+C:\Users\Usuário\OneDrive\Documentos\Estágio\Library-DDD\Solution\src\Library.Domain\obj\Debug\net9.0\Library.Domain.csproj.AssemblyReference.cache
