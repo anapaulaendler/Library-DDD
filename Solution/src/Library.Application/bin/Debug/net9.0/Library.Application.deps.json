@@ -420,6 +420,7 @@
       "System.Text.Json/9.0.0": {},
       "Library.Domain/1.0.0": {
         "dependencies": {
+          "Microsoft.Extensions.Caching.Memory": "9.0.0",
           "Microsoft.Extensions.Logging.Abstractions": "9.0.0"
         },
         "runtime": {
