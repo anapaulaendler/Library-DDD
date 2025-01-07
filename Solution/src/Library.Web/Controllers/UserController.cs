@@ -1,6 +1,7 @@
 using System.Security.Authentication;
 using Library.Domain.Interfaces;
 using Library.Domain.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Library.Web.Controllers;
@@ -19,6 +20,7 @@ public class UserController : ControllerBase
         _userService = userService;
     }
 
+    [Authorize(Roles = "Admin,Librarian")]
     [HttpPost]
     public async Task<User> CreateUserAsync(User newUser)
     {
@@ -27,6 +29,7 @@ public class UserController : ControllerBase
         return newUser;
     }
     
+    [Authorize(Roles = "Admin")]
     [HttpDelete("{userId}")]
     public async Task<IActionResult> DeleteUserAsync(Guid userId)
     {
@@ -35,6 +38,7 @@ public class UserController : ControllerBase
         return NoContent();
     }
 
+    [Authorize(Roles = "Admin,Librarian")]
     [HttpGet("{userId}")]
     public async Task<User> GetUserByIdAsync(Guid userId)
     {
@@ -43,12 +47,14 @@ public class UserController : ControllerBase
         return user;
     }
 
+    [Authorize(Roles = "Admin,Librarian")]
     [HttpGet]
     public async Task<List<User>> GetUsersAsync()
     {
         return await _userService.GetUsersAsync();
     }
 
+    [Authorize(Roles = "Admin,Librarian")]
     [HttpPut("{userId}")]
     public async Task<User> UpdateUserAsync(Guid userId, User updatedUser)
     {
@@ -57,6 +63,7 @@ public class UserController : ControllerBase
         return user;
     }
 
+    [AllowAnonymous]
     [HttpPost("login")]
     public async Task<IActionResult> Login([FromBody] UserLoginDTO loginDto)
     {

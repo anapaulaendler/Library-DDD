@@ -1,5 +1,6 @@
 using Library.Domain.Interfaces;
 using Library.Domain.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Library.Web.Controllers;
@@ -18,6 +19,7 @@ public class BookController : ControllerBase
         _bookService = bookService;
     }
 
+    [Authorize(Roles = "Admin")]
     [HttpPost]
     public async Task<Book> CreateBookAsync(Book newBook)
     {
@@ -26,6 +28,7 @@ public class BookController : ControllerBase
         return newBook;
     }
     
+    [Authorize(Roles = "Admin")]
     [HttpDelete("{bookId}")]
     public async Task<IActionResult> DeleteBookAsync(Guid bookId)
     {
@@ -34,6 +37,7 @@ public class BookController : ControllerBase
         return NoContent();
     }
 
+    [AllowAnonymous]
     [HttpGet("id:{bookId}")]
     public async Task<Book> GetBookByIdAsync(Guid bookId)
     {
@@ -42,6 +46,7 @@ public class BookController : ControllerBase
         return book;
     }
 
+    [AllowAnonymous]
     [HttpGet("isbn:{bookIsbn}")]
     public async Task<Book> GetBookByIsbnAsync(string bookIsbn)
     {
@@ -50,6 +55,7 @@ public class BookController : ControllerBase
         return book;
     }
 
+    [AllowAnonymous]
     [HttpGet("title:{bookTitle}")]
     public async Task<List<Book>> GetBooksByTitleAsync(string bookTitle)
     {
@@ -58,6 +64,7 @@ public class BookController : ControllerBase
         return books;
     }
 
+    [AllowAnonymous]
     [HttpGet("author:{bookAuthor}")]
     public async Task<List<Book>> GetBooksByAuthorAsync(string bookAuthor)
     {
@@ -66,6 +73,7 @@ public class BookController : ControllerBase
         return books;
     }
 
+    [Authorize(Roles = "Admin")]
     [HttpPut("{bookId}")]
     public async Task<Book> UpdateBookAsync(Guid bookId, Book updatedBook)
     {
@@ -74,6 +82,7 @@ public class BookController : ControllerBase
         return book;
     }
 
+    [AllowAnonymous]
     [HttpGet]
     public async Task<List<Book>> GetBooksAsync()
     {
