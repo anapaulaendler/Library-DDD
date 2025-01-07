@@ -1,9 +1,11 @@
+using System.Text;
 using Library.Domain.Interfaces;
 using Library.Infra.Context;
 using Library.Infra.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Library.Infra.Extensions;
 
@@ -14,6 +16,7 @@ public static class IoCExtensions
         AddRepositories(services);
         AddUnitOfWork(services);
         AddContext(services, configuration);
+        AddAuthenticationAndAuthorization(services, configuration);
 
         return services;
     }
@@ -38,4 +41,27 @@ public static class IoCExtensions
 
         return services;
     }
+
+    public static IServiceCollection AddAuthenticationAndAuthorization(this IServiceCollection services, IConfiguration configuration)
+    {
+        services.AddAuthentication("Bearer")
+            .AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = configuration["Jwt:Issuer"],
+                    ValidAudience = configuration["Jwt:Audience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Secret"]!))
+                };
+            });
+
+        services.AddAuthorization();
+
+        return services;
+    }
+
 }

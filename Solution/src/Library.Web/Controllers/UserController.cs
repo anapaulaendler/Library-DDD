@@ -1,3 +1,4 @@
+using System.Security.Authentication;
 using Library.Domain.Interfaces;
 using Library.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -54,5 +55,19 @@ public class UserController : ControllerBase
         var user = await _userService.UpdateUserAsync(userId, updatedUser);
 
         return user;
+    }
+
+    [HttpPost("login")]
+    public async Task<IActionResult> Login([FromBody] UserLoginDTO loginDto)
+    {
+        try
+        {
+            var token = await _userService.LoginAsync(loginDto);
+            return Ok(new { Token = token });
+        }
+        catch (AuthenticationException ex)
+        {
+            return Unauthorized(new { Message = ex.Message });
+        }
     }
 }

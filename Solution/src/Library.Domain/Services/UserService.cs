@@ -7,11 +7,13 @@ public class UserService : IUserService
 {
     private readonly IUserRepository _userRepository;
     private readonly IUnitOfWork _uow;
+    private readonly ITokenService _tokenService;
 
-    public UserService(IUserRepository userRepository, IUnitOfWork uow)
+    public UserService(IUserRepository userRepository, IUnitOfWork uow, ITokenService tokenService)
     {
         _userRepository = userRepository;
         _uow = uow;
+        _tokenService = tokenService;
     }
 
     public async Task CreateUserAsync(User user)
@@ -31,6 +33,15 @@ public class UserService : IUserService
 
         await _userRepository.AddAsync(newUser);
         await _uow.CommitTransactionAsync();
+    }
+
+    public async Task<string> LoginAsync(UserLoginDTO userLoginDTO)
+    {
+        var user = await _userRepository.GetUserByEmailAsync(userLoginDTO.UserEmail);
+        if (user == null || user.Password != userLoginDTO.Password)
+            throw new UnauthorizedAccessException("Invalid credentials");
+
+        return await _tokenService.GenerateTokenAsync(user);
     }
 
     private void ValidatePassword(string password)
