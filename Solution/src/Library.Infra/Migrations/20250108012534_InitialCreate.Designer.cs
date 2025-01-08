@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Library.Infra.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20241220172427_New")]
-    partial class New
+    [Migration("20250108012534_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -56,7 +56,7 @@ namespace Library.Infra.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("a984ed46-297d-4165-8dd4-703c1cc7069a"),
+                            Id = new Guid("3d2c69ea-31f0-4388-9c43-5c60f97cfd12"),
                             Author = "George Orwell",
                             Genre = "Dystopian",
                             IsBorrowed = false,
@@ -66,7 +66,7 @@ namespace Library.Infra.Migrations
                         },
                         new
                         {
-                            Id = new Guid("ba796368-e128-459b-bd12-fea7b0c05f6f"),
+                            Id = new Guid("90c4eeaa-345c-4c1d-96e3-16a65fb7cb54"),
                             Author = "Harper Lee",
                             Genre = "Fiction",
                             IsBorrowed = false,
@@ -76,7 +76,7 @@ namespace Library.Infra.Migrations
                         },
                         new
                         {
-                            Id = new Guid("e3c162c3-4320-4ff1-980a-203e24e99a9b"),
+                            Id = new Guid("7ac248f3-e8db-4d69-938e-faaa362a7134"),
                             Author = "F. Scott Fitzgerald",
                             Genre = "Classic",
                             IsBorrowed = false,
@@ -86,7 +86,7 @@ namespace Library.Infra.Migrations
                         },
                         new
                         {
-                            Id = new Guid("a516634d-6cbd-4b46-b7c0-a41246145c27"),
+                            Id = new Guid("0fd8f8a0-831c-46d3-86d0-57b9e5d3c2fb"),
                             Author = "Aldous Huxley",
                             Genre = "Science Fiction",
                             IsBorrowed = false,
@@ -96,7 +96,7 @@ namespace Library.Infra.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c9b7f2f2-2b71-400f-8db2-71254ee526b7"),
+                            Id = new Guid("e2f4a0b1-68da-4462-9a40-31e3fd6f0f45"),
                             Author = "J.D. Salinger",
                             Genre = "Fiction",
                             IsBorrowed = false,
@@ -127,6 +127,10 @@ namespace Library.Infra.Migrations
                     b.Property<DateTime?>("ReturnDate")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("UserEmail")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<Guid>("UserId")
                         .HasColumnType("TEXT");
 
@@ -153,6 +157,10 @@ namespace Library.Infra.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<byte>("Role")
                         .HasColumnType("INTEGER");
 
@@ -163,37 +171,42 @@ namespace Library.Infra.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("baaa7c3f-4bdf-4f09-a8b9-d805269688b1"),
+                            Id = new Guid("1b71e805-fc38-4bb2-9988-847327b7b445"),
                             Email = "alice@example.com",
                             Name = "Alice",
+                            Password = "123@abc",
                             Role = (byte)2
                         },
                         new
                         {
-                            Id = new Guid("2d3aaf51-dc40-457d-b269-9a87187a4148"),
+                            Id = new Guid("9ac2f2e0-2979-4ebe-9104-9fcb81db70fa"),
                             Email = "bob@example.com",
                             Name = "Bob",
+                            Password = "123@abc",
                             Role = (byte)1
                         },
                         new
                         {
-                            Id = new Guid("3b265ac2-c4d1-42be-926b-54f2f2208671"),
+                            Id = new Guid("0f5c13a7-ba67-43ae-ae16-ac7407a86728"),
                             Email = "charlie@example.com",
                             Name = "Charlie",
+                            Password = "123@abc",
                             Role = (byte)0
                         },
                         new
                         {
-                            Id = new Guid("b3713df6-ece1-4649-a596-29398130cdee"),
+                            Id = new Guid("f1e06fd6-d5ac-4ed6-906a-447513114e77"),
                             Email = "diana@example.com",
                             Name = "Diana",
+                            Password = "123@abc",
                             Role = (byte)2
                         },
                         new
                         {
-                            Id = new Guid("5e24816f-7085-4aad-9d9b-274ee91fae00"),
+                            Id = new Guid("4bc915b5-8a13-4d74-a848-388b6c976221"),
                             Email = "eve@example.com",
                             Name = "Eve",
+                            Password = "123@abc",
                             Role = (byte)2
                         });
                 });

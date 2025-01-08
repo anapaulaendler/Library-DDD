@@ -9,7 +9,7 @@ public class Initializer
 {
     public static IServiceCollection Register(IServiceCollection services, IConfiguration configuration)
     {
-        DomainIoC.Register(services);
+        DomainIoC.Register(services, configuration);
         InfraIoC.Register(services, configuration);
         
         return services;

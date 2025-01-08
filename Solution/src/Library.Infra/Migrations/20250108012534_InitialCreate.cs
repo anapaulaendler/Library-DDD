@@ -37,6 +37,7 @@ namespace Library.Infra.Migrations
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
                     Name = table.Column<string>(type: "TEXT", nullable: false),
                     Email = table.Column<string>(type: "TEXT", nullable: false),
+                    Password = table.Column<string>(type: "TEXT", nullable: false),
                     Role = table.Column<byte>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
@@ -51,6 +52,7 @@ namespace Library.Infra.Migrations
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
                     UserId = table.Column<Guid>(type: "TEXT", nullable: false),
                     BookId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    UserEmail = table.Column<string>(type: "TEXT", nullable: false),
                     LoanDate = table.Column<DateTime>(type: "TEXT", nullable: false),
                     DueDate = table.Column<DateTime>(type: "TEXT", nullable: false),
                     ReturnDate = table.Column<DateTime>(type: "TEXT", nullable: true),
@@ -78,23 +80,23 @@ namespace Library.Infra.Migrations
                 columns: new[] { "Id", "Author", "Genre", "IsBorrowed", "Isbn", "PublicationYear", "Title" },
                 values: new object[,]
                 {
-                    { new Guid("22583aa3-b586-4d2f-9144-dd701126a487"), "Aldous Huxley", "Science Fiction", false, "9780060850524", "1932", "Brave New World" },
-                    { new Guid("5290e6b1-e26a-4d7f-880a-94278c46b4dc"), "J.D. Salinger", "Fiction", false, "9780316769488", "1951", "The Catcher in the Rye" },
-                    { new Guid("9a866ef3-cdbe-4d71-9d46-510d2a505562"), "F. Scott Fitzgerald", "Classic", false, "9780743273565", "1925", "The Great Gatsby" },
-                    { new Guid("c6e4a1a8-afb6-4136-875c-491f1e421b2d"), "George Orwell", "Dystopian", false, "9780451524935", "1949", "1984" },
-                    { new Guid("cb8ded69-62a0-4a09-8186-16258574d1e0"), "Harper Lee", "Fiction", false, "9780061120084", "1960", "To Kill a Mockingbird" }
+                    { new Guid("0fd8f8a0-831c-46d3-86d0-57b9e5d3c2fb"), "Aldous Huxley", "Science Fiction", false, "9780060850524", "1932", "Brave New World" },
+                    { new Guid("3d2c69ea-31f0-4388-9c43-5c60f97cfd12"), "George Orwell", "Dystopian", false, "9780451524935", "1949", "1984" },
+                    { new Guid("7ac248f3-e8db-4d69-938e-faaa362a7134"), "F. Scott Fitzgerald", "Classic", false, "9780743273565", "1925", "The Great Gatsby" },
+                    { new Guid("90c4eeaa-345c-4c1d-96e3-16a65fb7cb54"), "Harper Lee", "Fiction", false, "9780061120084", "1960", "To Kill a Mockingbird" },
+                    { new Guid("e2f4a0b1-68da-4462-9a40-31e3fd6f0f45"), "J.D. Salinger", "Fiction", false, "9780316769488", "1951", "The Catcher in the Rye" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Users",
-                columns: new[] { "Id", "Email", "Name", "Role" },
+                columns: new[] { "Id", "Email", "Name", "Password", "Role" },
                 values: new object[,]
                 {
-                    { new Guid("058fff06-30b5-4f6f-8dcd-3a5dd9e38440"), "bob@example.com", "Bob", (byte)1 },
-                    { new Guid("4de942c8-c2f1-409f-bd1c-bf126e6847fd"), "eve@example.com", "Eve", (byte)2 },
-                    { new Guid("9c5359aa-2548-402f-90a0-c7e82fe225ae"), "charlie@example.com", "Charlie", (byte)0 },
-                    { new Guid("9f0fc384-9407-4053-b023-8f4f567dafad"), "alice@example.com", "Alice", (byte)2 },
-                    { new Guid("f047a248-dd4d-4ab4-b021-11160d6a5396"), "diana@example.com", "Diana", (byte)2 }
+                    { new Guid("0f5c13a7-ba67-43ae-ae16-ac7407a86728"), "charlie@example.com", "Charlie", "123@abc", (byte)0 },
+                    { new Guid("1b71e805-fc38-4bb2-9988-847327b7b445"), "alice@example.com", "Alice", "123@abc", (byte)2 },
+                    { new Guid("4bc915b5-8a13-4d74-a848-388b6c976221"), "eve@example.com", "Eve", "123@abc", (byte)2 },
+                    { new Guid("9ac2f2e0-2979-4ebe-9104-9fcb81db70fa"), "bob@example.com", "Bob", "123@abc", (byte)1 },
+                    { new Guid("f1e06fd6-d5ac-4ed6-906a-447513114e77"), "diana@example.com", "Diana", "123@abc", (byte)2 }
                 });
 
             migrationBuilder.CreateIndex(
