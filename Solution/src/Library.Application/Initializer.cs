@@ -1,7 +1,7 @@
 using DomainIoC = Library.Domain.Extensions.IoCExtensions;
 using InfraIoC = Library.Infra.Extensions.IoCExtensions;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Configuration;
 
 namespace Library.Application.DI;
 
